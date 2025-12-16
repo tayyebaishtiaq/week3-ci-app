@@ -1,2 +1,8 @@
+from flask import Flask
 
-print("App running successfully!")
+app = Flask(__name__)
+
+@app.route("/")
+def home():
+    return "Hello"
+
