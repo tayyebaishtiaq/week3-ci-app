@@ -1,0 +1,45 @@
+name: CI Pipeline
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      - name: Install Dependencies
+        run: pip install pytest
+      - name: Run Tests
+        run: pytest
+[cite_start]```[cite: 72, 73, 76, 82, 85, 87, 89, 154, 156].
+
+### Task 3: Docker Hub Setup (Optional magar Recommended)
+Agar aap Docker image push karna chahte hain:
+1.  [cite_start]**Secrets Add Karein**: Apne GitHub repo ki Settings > Secrets > Actions mein jayein aur `DOCKER_USERNAME` aur `DOCKER_PASSWORD` add karein[cite: 169, 170].
+2.  [cite_start]**Workflow Update**: Apni `ci.yml` file mein Docker login aur push ke steps add karein[cite: 160, 161, 164, 167, 168].
+
+### Task 4: Architecture Diagram Banayein
+[cite_start]Aapko ek diagram draw karna hai (draw.io ya Canva use kar sakte hain) jis mein ye cheezain dikhani hain[cite: 171, 181, 182, 183]:
+* [cite_start]**Developer**: Jo code push karta hai[cite: 173].
+* [cite_start]**GitHub Repo**: Jahan code store hota hai[cite: 174].
+* [cite_start]**Trigger**: Push ya Pull Request[cite: 175].
+* [cite_start]**GitHub Actions Runner**: Wo machine jo pipeline chalati hai[cite: 176].
+* [cite_start]**Build & Test Jobs**: Pipeline ke andar hone wale kaam[cite: 177, 178].
+
+### Task 5: Submission File Taiyar Karein
+[cite_start]Ek single PDF file banayein jis mein ye sab ho[cite: 192]:
+1.  [cite_start]**Screenshots**: Passing GitHub workflow (green checkmark) aur test results ka screenshot[cite: 193].
+2.  [cite_start]**Docker Hub Screenshot**: Agar aapne image push ki hai[cite: 194].
+3.  [cite_start]**Diagram**: Jo aapne Task 4 mein banaya[cite: 195].
+4.  **Short Explanation**: 
+    * [cite_start]**CI (Continuous Integration)**: Developers code jaldi push karte hain aur har push par automatic testing hoti hai[cite: 8, 9, 10].
+    * [cite_start]**CD (Continuous Deployment)**: Code ko automatically bina manual approval ke servers par deploy karna[cite: 18].
+    * [cite_start]**GitHub Actions**: 
